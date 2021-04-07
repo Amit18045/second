@@ -1,0 +1,65 @@
+Question 2
+Find the maximum consecutive 1's in an array of 0's and 1's.
+
+
+public static int maxOnes(int[] arr){
+		int count = 0;
+		int max = 0;
+		for(int i = 0; i < arr.length; i++){
+			if(arr[i] == 0)
+				count = 0;
+			else
+				count++;
+			max = count > max ? count : max;
+		}
+		return max;
+	}
+
+    Question 3
+Suppose you have an array of 101 integers. This array is already sorted and all numbers in this array are consecutive. Each number only occurs once in the array except one number which occurs twice. Write a js code to find the repeated number.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Find duplicate values in a JavaScript array</title>
+</head>
+<body>
+</body>
+</html>
+
+JavaScript Code:
+
+function find_duplicate_in_array(arra1) {
+        var object = {};
+        var result = [];
+
+        arra1.forEach(function (item) {
+          if(!object[item])
+              object[item] = 0;
+            object[item] += 1;
+        })
+
+        for (var prop in object) {
+           if(object[prop] >= 2) {
+               result.push(prop);
+           }
+        }
+
+        return result;
+
+    }
+
+Question 5
+    console.log(find_duplicate_in_array([1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6]));
+
+    It can be a dictionary or java object, as per your language of choice. But its key/value pair dictionary simply.
+
+    items.sort(function(a, b) {
+    return (a.id - b.id);
+}).sort(function(a, b) {
+    return (a.name - b.name);
+});
+
+console.log(items);
